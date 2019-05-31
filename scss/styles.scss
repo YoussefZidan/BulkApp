@@ -1,0 +1,352 @@
+@import "variables";
+@import "mixins";
+
+// global
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+.white {
+  color: #fff;
+}
+.hmargin {
+  margin-bottom: 20px;
+}
+.secmargin {
+  margin-bottom: 120px;
+}
+.center {
+  text-align: center;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+
+// navbar
+.header {
+  background-image: url(../imgs/home-banner.jpg);
+  background-size: cover;
+  height: 980px;
+  ul {
+    list-style: none;
+    li {
+      display: inline;
+      margin-right: 20px;
+    }
+    .active {
+      border-bottom: 2px solid #fff;
+      padding-bottom: 5px;
+    }
+    li:last-child {
+      margin-right: 0px;
+    }
+  }
+}
+nav {
+  @include container();
+  padding-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+// end navbar
+
+// hero
+.hero {
+  .hero-container {
+    @include container();
+    position: relative;
+  }
+  .hero-flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .hero-text {
+      width: 50%;
+    }
+  }
+  button {
+    @include primaryButton();
+    position: absolute;
+    top: 500px;
+  }
+}
+// hero end
+
+// features
+.features {
+  .feature-container {
+    @include container();
+    .feature-header {
+      @extend %sectionHeaders;
+      @extend %autoMargin;
+    }
+
+    .feature-flex-container {
+      display: flex;
+      padding-top: 100px;
+
+      .feature-box {
+        @include boxHover();
+        h4 {
+          color: $darkGray;
+        }
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        width: 300px;
+        margin-right: 20px;
+        box-shadow: 0px 0px 25px -4px rgba(214, 214, 214, 0.97);
+      }
+      .feature-box:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+// features end
+
+// interior
+.interior {
+  .interior-flex-container {
+    @include container();
+    display: flex;
+    align-items: center;
+  }
+  .interior-text {
+    padding: 5%;
+    h3 {
+      color: $darkGray;
+    }
+    p {
+      color: $lightGray;
+    }
+  }
+  button {
+    @include secondaryButton();
+  }
+  figure {
+    @include container();
+    position: relative;
+    .icon {
+      position: absolute;
+      top: 45%;
+      left: 45%;
+    }
+  }
+}
+// interior end
+
+// pricing
+.pricing {
+  .pricing-container {
+    @include container();
+  }
+  .pricing-header {
+    @extend %sectionHeaders;
+    @extend %autoMargin;
+  }
+  .standard-flex-container {
+    display: flex;
+  }
+  .standard-text {
+    margin: 0 62px;
+  }
+
+  .plan-flex-container {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 70px;
+    button {
+      @include purchaseButton();
+      @include purchaseButtonHover();
+    }
+  }
+}
+// pricing end
+
+// screen shot
+.screenshots {
+  .screenshot-container {
+    @include container();
+  }
+  .screenshot-text {
+    @extend %autoMargin;
+    @extend %sectionHeaders;
+  }
+  .figuer-container {
+    display: flex;
+    justify-content: space-around;
+    img {
+      @include boxHover();
+    }
+  }
+}
+// screen shot end
+
+// testimonails
+.testimonails {
+  .testimonail-text {
+    @extend %autoMargin;
+    @extend %sectionHeaders;
+  }
+  .testimonail-container {
+    @include container();
+  }
+  .testimonails-flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .testimonails-flex-item {
+    display: flex;
+    margin-left: 50px;
+
+    .testimonail-text-img {
+      padding: 3%;
+      width: 80%;
+      h4 {
+        color: $darkGray;
+      }
+      span {
+        color: $lightGray;
+      }
+    }
+  }
+}
+// testimonails end
+
+// download
+.download {
+  background-image: url(../imgs/home-banner.jpg);
+  background-size: cover;
+  height: 480px;
+  padding-top: 130px;
+  .download-text {
+    @extend %autoMargin;
+    color: #fff;
+    width: 50%;
+  }
+  .icons {
+    padding-top: 50px;
+    img {
+      &:hover {
+        transform: scale(1.1);
+      }
+      margin: 0 20px;
+    }
+  }
+}
+// download end
+
+// news
+.news {
+  .news-container {
+    @include container();
+  }
+  .news-text {
+    @extend %sectionHeaders;
+    @extend %autoMargin;
+  }
+  .news-box-container {
+    display: flex;
+    justify-content: space-around;
+  }
+  .news-box {
+    &:hover {
+      box-shadow: 2px 2px 20px 0px rgba(199, 199, 199, 0.97);
+    }
+    background-color: #f1f1f1;
+    padding: 40px 20px;
+    width: 30%;
+    button {
+      @include newsButton();
+    }
+    h3 {
+      color: $darkGray;
+    }
+    p,
+    span {
+      color: $lightGray;
+    }
+    .spans {
+      span {
+        &:hover {
+          color: $darkGray;
+          cursor: pointer;
+        }
+        margin-right: 15px;
+      }
+    }
+  }
+}
+// news end
+
+// footer
+footer {
+  background-color: $darkGray;
+  color: #fff;
+  padding: 10% 0;
+  .footer-container {
+    @include container();
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .newsletter {
+    padding: 10px 10px 10px 30px;
+  }
+  .products {
+    p {
+      margin-bottom: 10px;
+    }
+  }
+  .products,
+  .instagram {
+    width: 25%;
+    padding: 10px;
+    img {
+      margin: 0 5px 5px 0;
+      cursor: pointer;
+    }
+  }
+  .newsletter {
+    position: relative;
+    width: 60%;
+    input {
+      padding: 10px 250px 10px 10px;
+      border-radius: 5em;
+      border: none;
+    }
+    button {
+      &:hover {
+        background-image: linear-gradient(to right, $darkPurple, $lightPurple);
+      }
+      background-image: linear-gradient(to right, $lightPurple, $darkPurple);
+      border-radius: 5em;
+      border: none;
+      width: 160px;
+      padding: 10px;
+      font-size: 1.1em;
+      position: relative;
+      right: 30px;
+    }
+  }
+  .footer-img-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+// footer end

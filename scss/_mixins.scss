@@ -1,0 +1,74 @@
+@mixin container {
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@mixin primaryButton {
+  &:hover{
+    transform: scale(1.1);
+  }
+  background-color: #fff;
+  border-radius: 0.5em;
+  border: none;
+  width: 180px;
+  padding: 1.5%;
+  font-size: 1.1em;
+}
+
+@mixin secondaryButton {
+  &:hover {
+    background-image: linear-gradient(to right, $darkPurple, $lightPurple);
+  }
+  background-image: linear-gradient(to right, $lightPurple, $darkPurple);
+  border-radius: 0.5em;
+  border: none;
+  width: 160px;
+  padding: 3.5%;
+  font-size: 1.1em;
+}
+
+
+@mixin purchaseButton {
+  background-color: #fff;
+  border-radius: 0.5em;
+  border: 1px solid $lightGray;
+  width: 200px;
+  padding: 5%;
+  font-size: 1.1em;
+}
+@mixin newsButton {
+  background-color: #fff;
+  border-radius: 0.2em;
+  border: 1px solid $lightGray;
+  width: 120px;
+  padding: 0.7%;
+}
+
+@mixin purchaseButtonHover {
+  &:hover {
+    background-color: $lightPurple;
+    color: #fff;
+  }
+}
+
+@mixin boxHover {
+  &:hover {
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+  }
+}
+
+%autoMargin {
+  margin: 0 auto;
+}
+
+%sectionHeaders {
+  width: 50%;
+  h2 {
+    color: $darkGray;
+  }
+  p {
+    color: $lightGray;
+  }
+}
